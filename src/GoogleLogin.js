@@ -28,7 +28,8 @@ export default class GoogleLogin extends React.Component{
   clickHandler () {
     var socialId = this.props.socialId,
         responseHandler = this.props.responseHandler,
-        scope = this.props.scope;
+        scope = this.props.scope,
+        signin_configs = this.props.signin_configs || {};
 
     gapi.load('auth2', function() {
       var auth2 = gapi.auth2.init({

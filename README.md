@@ -1,21 +1,23 @@
 # react-google-login-component
 > React Google Component to log users in through google
 
-[![version](https://img.shields.io/npm/v/react-google-login-component.svg?style=flat-square)](http://npm.im/react-google-login-component)
+[![version](https://img.shields.io/npm/v/react-google-login-component.svg?style=flat-square)](http://npm.im/react-google-login-component-aop)
 [![MIT License](https://img.shields.io/npm/l/react-google-login-component.svg?style=flat-square)](http://opensource.org/licenses/MIT)
+
+A fork from https://github.com/kennetpostigo/react-google-login-component
 
 react-google-login-component is a module that easily lets you drop it into
 your existing project and get the benefits of Google Login. It's a plug and
 play component that'll fit in your workflow if your using standalone React or
 React with Redux.
 
-You can find login with Facebook [here](https://github.com/kennetpostigo/react-facebook-login-component)
+You can find login with Facebook [here](https://github.com/aop/react-facebook-login-component)
 
 ##### Up to date with the latest API Version
 
 ## Usage
 ```bash
-npm install --save react-google-login-component
+npm install --save react-google-login-component-aop
 ```
 ```js
 import React from 'react';
