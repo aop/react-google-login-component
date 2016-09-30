@@ -13,6 +13,7 @@ export default class GoogleLogin extends React.Component{
      js.src = 'https://apis.google.com/js/platform.js'
      gs.parentNode.insertBefore(js, gs);
    }(document, 'script', 'google-platform'));
+    gapi.load('auth2', initAuth)
   }
 
   checkLoginState (response) {
@@ -23,6 +24,18 @@ export default class GoogleLogin extends React.Component{
         this.props.responseHandler({status: response.status});
       }
     }
+  }
+
+  initAuth() {
+    gapi.auth2.init({
+      client_id: socialId,
+        fetch_basic_profile: false,
+        scope: scope
+      }).then(function() {
+        auth2 = gapi.auth2.getAuthInstance();
+
+        auth2.isSignedIn.listen(checkLoginState);
+      })
   }
 
   clickHandler () {
@@ -37,7 +50,7 @@ export default class GoogleLogin extends React.Component{
         fetch_basic_profile: false,
         scope: scope
       });
-      auth2.signIn().then(function(googleUser) {
+      auth2.signIn(signin_configs).then(function(googleUser) {
         responseHandler(googleUser);
       });
     });

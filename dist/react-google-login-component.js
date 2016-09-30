@@ -132,8 +132,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    value: function clickHandler() {
 	      var socialId = this.props.socialId,
 	          responseHandler = this.props.responseHandler,
-	          scope = this.props.scope;
-	      signin_configs = this.props.signin_configs || {};
+	          scope = this.props.scope,
+	          signin_configs = this.props.signin_configs || {};
 
 	      gapi.load('auth2', function () {
 	        var auth2 = gapi.auth2.init({
@@ -141,7 +141,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	          fetch_basic_profile: false,
 	          scope: scope
 	        });
-	        auth2.signIn().then(function (googleUser) {
+	        auth2.signIn(signin_configs).then(function (googleUser) {
 	          responseHandler(googleUser);
 	        });
 	      });
